@@ -1,0 +1,57 @@
+body{
+    background: #ff9a9e;
+    margin: auto;
+    width: 100%;
+}
+.login{
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+    
+     margin: auto;
+    margin-top: 100px;
+    height: 400px;
+}
+.p{
+    font-size: 23px;
+    height: 50px;
+}
+.name{
+    border-radius: 5px;
+    padding: 6px 40px 6px 10px;
+    margin-bottom: 20px;
+}
+.justify{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.email
+{
+    border-radius: 5px;
+    padding: 6px 40px 6px 10px;
+    margin-bottom: 20px;
+
+
+}
+.pas{
+    border-radius: 5px;
+    padding: 6px 40px 6px 10px;
+    margin-bottom: 20px;
+    
+}
+.submitt{
+    border-radius: 5px;
+    padding: 6px 40px;
+    margin-bottom: 50px;
+    
+    border: none;
+    background: rgb(238, 136, 136);
+    cursor: pointer;
+}
+.submitt:hover{
+    background: #8f8889;
+}

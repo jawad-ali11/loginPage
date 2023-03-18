@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="Untitled-1.css">
+</head>
+<body class="parent">
+    <div>
+        <div class="login">
+
+             <div class="line">
+                 <p class="heading">Login</p>
+              </div>
+
+              <div class="form">
+               <form id="form">
+                 <label id="jawad" for="">Username</label>
+                 <input class="name" id="person" type="text" placeholder="Type Your username"> <br>
+                 <label for="">Email</label>
+                 <input id="mail" class="email" type="email" placeholder="Email address"> <br>
+                 <label for="">Password</label>
+                 <input id="password" class="pas" type="password" placeholder="Input your password">
+                 <div class="justify">
+                    <button id="button1" class="button">LOGIN</button>
+                 </div>
+              </form>
+            
+              </div>
+              
+
+              <p id="successful" class="p2">login successful</p>
+            </div>
+           
+        </div>
+
+
+             <script>
+          
+                const userForm=document.getElementById('form');
+                var loginData={};
+                userForm.addEventListener('submit', function(event) {
+                    event.preventDefault();
+                 const username=document.getElementById('person');
+                 const email=document.getElementById('mail');
+                 const key=document.getElementById('password');  
+                  const loginDone=document.getElementById('successful');
+                  const users = JSON.parse(localStorage.getItem('users')); 
+                 loginData={
+                    username: username.value,
+                    email: email.value,
+                    password: key.value
+                 };
+                 for(let i=0;i<users.length;i++){
+                    const user=users[i];
+                    if(user.name===loginData.username && user.email===loginData.email && user.password===loginData.password){                    
+                        loginDone.style.display = 'block'; 
+                        break; 
+                    }
+                    else{
+                        loginDone.style.display= 'none';
+                    }
+                 }
+                });
+               
+             </script>
+            
+        
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <div>
+      <div class="login">
+
+      <p class="p">CREATE YOUR ACCOUNT</p>
+      <form id="myForm">
+
+        <input id="name" class="name" type="text" placeholder="name"/> <br/>
+        <input id="mail" class="email" type="email" placeholder="email"/> <br/>
+        <input id="password" class="pas"   type="password" placeholder=" password"/> <br/>
+        <input id="confirmation"  type="password" class="pas" placeholder="confirm password"/> <br>
+          <div class="justify"> <input type="submit" id="submit"    class="submitt"> </div>
+      </form>
+      
+      </div>
+
+      <script> 
+       
+
+      const users=[]; 
+      const form = document.getElementById('myForm');
+      form.addEventListener('submit',  function(event) {
+			event.preventDefault();
+			 const nameInput=document.getElementById('name');
+       const Email=document.getElementById('mail');
+       const userKey=document.getElementById('password');
+       const confirmationPassword=document.getElementById('confirmation');
+       
+  
+                                                    
+       const passwordInput = document.getElementById('password');
+         const emailInput=document.getElementById('mail');
+      //  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //  const email=document.getElementById('mail').value;
+        //  const x=emailRegex.test(email); 
+     
+  const passwordLength = passwordInput.value.length;
+   if(nameInput.value===""){
+    
+    nameInput.style.borderColor = 'red';
+    nameInput.placeholder = "Please Enter Your Name"
+    
+    
+    return;
+  }
+  if(emailInput.value===""){
+    emailInput.style.borderColor = 'red';
+    emailInput.placeholder = "Please enter your email";
+    
+    return;
+  }
+
+ if(passwordInput.value==="")
+  {
+    passwordInput.style.borderColor = 'red';
+    passwordInput.placeholder = "Please enter a password";
+    passwordInput.value="";
+    return;
+  }
+  
+ if(confirmationPassword.value!==passwordInput.value){
+    
+    confirmationPassword.style.borderColor = 'red';
+    confirmationPassword.placeholder = "Passwords do not match. Please re-enter your password.";
+    confirmationPassword.value="";
+    return;
+  }
+
+ if (passwordLength <8 ) {
+   
+    passwordInput.style.borderColor = 'red';
+    passwordInput.placeholder = "Password must be at least 8 characters";
+    passwordInput.value="";
+    return;
+   
+  }
+  
+
+else {
+  nameInput.style.borderColor = '';
+  emailInput.style.borderColor = '';
+  passwordInput.style.borderColor = '';
+    users.push({name: nameInput.value, email: Email.value, password: userKey.value});
+    localStorage.setItem('users', JSON.stringify(users));
+            console.log(users);
+            window.open('Untitled-1.html');
+            form.reset();
+  }
+  
+
+
+// });
+               
+});  
+ 
+
+
+       
+
+      
+      </script>
+    </div>
+  </body>
+</html>
